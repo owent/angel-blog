@@ -1,0 +1,186 @@
+---
+baseURL: "//angel.owent.net"
+
+# include content marked as draft
+buildDrafts:                false
+# include content with publishdate in the future
+buildFuture:                true
+# include content already expired
+buildExpired:               true
+# enable this to make all relative URLs relative to content root. Note that this does not affect absolute URLs.
+relativeURLs:               true
+canonifyURLs:               true
+# config file (default is path/config.yaml|json|toml)
+config:                     "config.yaml"
+contentDir:                 "source"
+dataDir:                    "data"
+defaultExtension:           "html"
+defaultLayout:              "post"
+# Missing translations will default to this content language
+defaultContentLanguage:     "zh-cn"
+# Renders the default content language in subdir, e.g. /en/. The root directory / will redirect to /en/
+defaultContentLanguageInSubdir: false
+# The below example will disable all page types and will render nothing.
+disableKinds:               []
+disableLiveReload:          false
+# Enable GitInfo feature
+enableGitInfo:              false
+# Build robots.txt file
+enableRobotsTXT:            true
+# Do not inject generator meta tag on homepage
+disableHugoGeneratorInject: false
+# Enable Emoji emoticons support for page content.
+# See www.emoji-cheat-sheet.com
+enableEmoji:                false
+# Show a placeholder instead of the default value or an empty string if a translation is missing
+enableMissingTranslationPlaceholders: false
+footnoteAnchorPrefix:       ""
+footnoteReturnLinkContents: ""
+
+languageCode:               "zh-cn"
+layoutDir:                  "layouts"
+# Enable Logging
+log:                        false
+# Log File path (if set, logging enabled automatically)
+logFile:                    ""
+# "yaml", "toml", "json"
+metaDataFormat:             "yaml"
+# Edit new content with this editor, if provided
+newContentEditor:           ""
+# Don't sync permission mode of files
+noChmod:                    false
+# Don't sync modification time of files
+noTimes:                    false
+paginate:                   20
+paginatePath:               "page"
+permalinks:
+  post: /:year/:filename
+
+# Pluralize titles in lists using inflect
+pluralizeListTitles:        true
+# Preserve special characters in taxonomy names ("Gérard Depardieu" vs "Gerard Depardieu")
+preserveTaxonomyNames:      false
+# filesystem path to write files to
+publishDir:                 "public"
+# enables syntax guessing for code fences without specified language
+pygmentsCodeFencesGuessSyntax: false
+# color-codes for highlighting derived from this style
+pygmentsStyle:              "monokai"
+# true: use pygments-css or false: color-codes directly
+pygmentsUseClasses:         false
+# maximum number of items in the RSS feed
+rssLimit:                   100
+# default sitemap configuration map
+sitemap:                     sitemap.xml
+# filesystem path to read files relative from
+source:                     ""
+staticDir:                  "source/post"
+# display memory and timing of different steps of the program
+stepAnalysis:               false
+# theme to use (located by default in /themes/THEMENAME/)
+themesDir:                  "themes"
+theme:                      "distinctionpp"
+title:                      "ANGEL"
+# if true, use /filename.html instead of /filename/
+uglyURLs:                   true
+# if true, auto-detect Chinese/Japanese/Korean Languages in the content. (.Summary and .WordCount can work properly in CJKLanguage)
+hasCJKLanguage:             true
+# verbose output
+verbose:                    false
+# verbose logging
+verboseLog:                 false
+# watch filesystem for changes and recreate as needed
+watch:                      true
+ignoreFiles:
+  - "README\\.md$"
+
+# custom options
+
+params:
+  description: "Living for the here and now"
+  author: "ANGEL"
+  githubuser: "AngelGong"
+  favicon: /favicon.ico
+  ugly: ".html"
+  search:
+    url: //www.bing.com/search
+    keywork: q
+    sitename: q1
+    siteprefix: "site:"
+  bootstrap:
+    # js: //cdn.bootcss.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js
+    js: //maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js
+    # css: //cdn.bootcss.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css
+    css: //maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css
+    popper:
+      js: //cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js
+  highlightjs:
+    style: "vs2015"      # style name
+    langs: ['capnproto', 'cmake', 'd', 'dos', 'erlang', 'go', 'less', 'lua', 'php', 'powershell', 'protobuf', 'profile', 'typescript', 'vim']
+    selector: 'pre>code'
+    version: '9.12.0'
+    url:                  # 
+      # js: "//cdn.bootcss.com/highlight.js/%VERSION%/highlight.min.js"
+      js: //cdnjs.cloudflare.com/ajax/libs/highlight.js/%VERSION%/highlight.min.js
+      # style: "//cdn.bootcss.com/highlight.js/%VERSION%/styles/%STYLE%.min.css"
+      style: //cdnjs.cloudflare.com/ajax/libs/highlight.js/%VERSION%/styles/%STYLE%.min.css
+      # lang: "//cdn.bootcss.com/highlight.js/%VERSION%/languages/%LANG%.min.js"
+      lang: //cdnjs.cloudflare.com/ajax/libs/highlight.js/%VERSION%/languages/%LANG%.min.js
+    options:              # options of highlight.js see http://highlightjs.readthedocs.io/en/latest/api.html#configure-options
+      tabReplace: '    '
+      useBR: false
+      #classPrefix: 'hljs-'
+      languages: {}   # language alias
+  katex:
+    js: //cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.js
+    css: //cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.css
+    autorender: //cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/contrib/auto-render.min.js
+  mathjax:
+    # js: //cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+    # js: //cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+  jquery:
+    js: //code.jquery.com/jquery-3.2.1.slim.min.js
+    migrate: //code.jquery.com/jquery-migrate-1.4.1.min.js
+
+menu:
+  main:
+    - Name: "Home"
+      Weight: 1
+      Identifier: "home"
+      URL: "/"
+    - Name: "Archives"
+      Weight: 2
+      Identifier: "archives"
+      URL: "/archives.html"
+
+author:
+    name: "Angel"
+    email: "angelg0426@hotmail.com"
+
+taxonomies:
+  tag: "tags"
+  category: "categories"
+
+DisqusShortname: angel-13
+googleAnalytics: "UA-19298704-3"
+
+blackfriday:
+  taskLists: true
+  smartypants: true
+  angledQuotes: false
+  fractions: true
+  smartDashes: true
+  latexDashes: true
+  hrefTargetBlank: true
+  plainIDAnchors: true
+  extensions:
+    - noIntraEmphasis
+    - tables
+    - fencedCode
+    - autolink
+    - strikethrough
+    - laxHtmlBlocks
+    - hardLineBreak
+    - footnotes
+  extensionsmask:
+---
