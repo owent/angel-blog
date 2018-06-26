@@ -13,4 +13,4 @@ if [ 0 -eq $? ]; then
     fi
 fi
 
-rsync -avz --force --delete public/ angel@angel.owent.net:/home/website/angel_blog
+rsync -avz --force --delete public/ angel@sssvr-s.owent.net:/home/website/angel_blog
