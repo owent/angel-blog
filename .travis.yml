@@ -1,0 +1,51 @@
+language: go
+go:
+- 1.x
+
+env:
+  global:
+    - LANG="zh_CN.UTF-8"
+matrix:
+  include:
+    - os: linux
+      dist: bionic
+      sudo: required
+      addons:
+        apt:
+          packages:
+            - graphviz
+            - python3
+
+script:
+  - sudo snap install hugo
+  - sudo snap refresh hugo
+  - if [ -e public ]; then rm -rf public ; fi
+  - bash deploy.sh
+
+cache: 
+  apt: true
+  ccache: true
+
+deploy:
+  provider: pages
+  local_dir: public
+  repo: owent/angel-blog-website
+  target_branch: master
+  keep_history: true
+  # keep_history: false
+  fqdn: angel.owent.net
+  github_token: $GITHUB_TOKEN
+  skip_cleanup: true
+  on:
+    all_branches: true
+
+notifications:
+  email:
+    recipients:
+      - admin@owent.net
+      - owt5008137@live.com
+    on_success: change
+    on_failure: change
+  irc:
+    template:
+      - "%{repository}/%{branch} (%{commit} - %{author}): %{build_url}: %{message}"

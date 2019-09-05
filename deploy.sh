@@ -9,8 +9,9 @@ if [ 0 -eq $? ]; then
 
     if [ 0 -ne $? ]; then
         echo "Something error, exit with $?";
-        exit $?;
+        exit 1 ;
     fi
 fi
 
-rsync -avz --force --delete public/ angel@sssvr-s.owent.net:/home/website/angel_blog
+# rsync -avz --force --delete public/ angel@sssvr-s.owent.net:/home/website/angel_blog
+
